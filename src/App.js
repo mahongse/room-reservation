@@ -1,10 +1,5 @@
 import React, { Fragment } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Redirect,
-  Switch
-} from "react-router-dom";
+import { HashRouter, Route, Redirect, Switch } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import Rooms from "./screens/Rooms";
 import Bookings from "./screens/Bookings";
@@ -17,7 +12,7 @@ import "./App.css";
 function App() {
   return (
     <Fragment>
-      <Router>
+      <HashRouter>
         <Navbar />
         <ToastContainer autoClose={2000} />
         <Switch>
@@ -26,7 +21,7 @@ function App() {
           <Route exact path="/visitors" component={Visitors} />
           <Route render={() => <Redirect to="/rooms" />} />
         </Switch>
-      </Router>
+      </HashRouter>
     </Fragment>
   );
 }
